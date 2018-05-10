@@ -1,0 +1,17 @@
+<ion-view view-title="Contacts">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in data" style="padding: 5px" ng-click="detail(item)">
+        <div class="row">
+          <div class="col text-left">姓名:</div>
+          <div class="col text-right">{{item.name}}</div>
+        </div>
+        <div class="row">
+          <div class="col text-left">性别：</div>
+          <div class="col text-right">{{item.age}}</div>
+        </div>
+      </ion-item>
+
+      <div ng-click="add()">add</div>
+  </ion-content>
+</ion-view>

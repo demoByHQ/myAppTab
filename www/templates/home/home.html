@@ -1,0 +1,21 @@
+<ion-view view-title="home">
+  <ion-content>
+
+    <!-- start 轮播图-->
+    <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
+      <ion-slide>
+        <div class="box banner" style="background: red;height: 180px"></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box banner" style="background: blue;height: 180px"></div>
+      </ion-slide>
+      <ion-slide on-slide-changed="slideHasChanged(index)">
+        <div class="box banner" style="background: yellow;height: 180px"></div>
+      </ion-slide>
+    </ion-slide-box>
+    <!-- end 轮播图-->
+    <div>
+      home{{test}}
+    </div>
+  </ion-content>
+</ion-view>
