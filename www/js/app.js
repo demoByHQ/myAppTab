@@ -5,8 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
-
+var handMobile = angular.module('handMobile', [
+  'ionic',
+  'handMobile.controllers',
+  'handMobile.services',
+])
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -45,8 +48,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
     $stateProvider
+      .state('/login', {
+        url: '/login',
+        templateUrl: 'templates/login/login.html',
+        controller: 'LoginCtrl'
+      })
 
-    // setup an abstract state for the tabs directive
+      // setup an abstract state for the tabs directive
       .state('tab', {
         url: '/tab',
         abstract: true,
@@ -85,12 +93,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       })
 
-      .state('tab.demo', {
-        url: '/demo',
+      .state('tab.contact', {
+        url: '/contact',
         views: {
-          'tab-demo': {
-            templateUrl: 'templates/demo/demo.html',
-            controller: 'DemoCtrl'
+          'tab-contact': {
+            templateUrl: 'templates/contact/contact.html',
+            controller: 'ContactCtrl'
+          }
+        }
+      })
+      .state('tab.detail', {
+        url: '/contact-detail',
+        params: {
+          "detail": null
+        },
+        views: {
+          'tab-contact': {
+            templateUrl: 'templates/contact/contactDetail.html',
+            controller: 'ContactDetailCtrl'
           }
         }
       })
@@ -116,6 +136,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/home');
+    $urlRouterProvider.otherwise('/login');
 
   });

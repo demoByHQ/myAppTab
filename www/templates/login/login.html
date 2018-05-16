@@ -1,21 +1,19 @@
-<ion-view view-title="home">
+<ion-view view-title="login" hide-nav-bar="true">
   <ion-content>
-
-    <!-- start 轮播图-->
-    <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
-      <ion-slide>
-        <div class="box banner" style="background: red;height: 180px"></div>
-      </ion-slide>
-      <ion-slide>
-        <div class="box banner" style="background: blue;height: 180px"></div>
-      </ion-slide>
-      <ion-slide on-slide-changed="slideHasChanged(index)">
-        <div class="box banner" style="background: yellow;height: 180px"></div>
-      </ion-slide>
-    </ion-slide-box>
-    <!-- end 轮播图-->
-    <div>
-      home{{test}}
+    <div class="content has-header">
+      <div class="list" style="padding: 10px">
+        <label class="item item-input">
+          <input type="text" placeholder="用户名" ng-model="view.userInfo.username">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="密码" ng-model="view.userInfo.password">
+        </label>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-positive" ng-click="login()">login</button>
+      </div>
     </div>
   </ion-content>
+  <!--<button class="button button-calm" style="width: 100%;position: absolute;bottom: 0px" ng-click="login()">login-->
+  <!--</button>-->
 </ion-view>

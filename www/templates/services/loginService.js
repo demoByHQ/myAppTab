@@ -1,5 +1,5 @@
 'use strict';
-angular.module('starter')
+angular.module('handMobile')
   .factory('loginService', ['$http', '$q',
     function ($http, $q) {
       return {

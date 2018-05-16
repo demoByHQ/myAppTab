@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('starter')
+angular.module('handMobile')
   .factory('authInterceptor', function ( $q, $injector) {
     return {
       // Add authorization token to headers
